@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aee3fee6-5b65-46d4-afcd-283613b90b77" name="Changes" comment="fix">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/pango-automation-interview-questions.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/automation_framework/WeatherDiscrepancyAnalyzer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/automation_framework/config/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/automation_framework/config/manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/automation_framework/utilities/api_access.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/automation_framework/utilities/data_loader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/automation_framework/utilities/web_driver_extension/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/automation_framework/utilities/web_driver_extension/web_driver_extension.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/data_classes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/data_classes/get_weather_response.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/objects_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/objects_api/weather_page_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/objects_ui/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/objects_ui/weather_page_ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_data/popular_cities.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_openweather_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_suit_Base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_temperatura_data_consistency.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automation_framework/config/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/automation_framework/config/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automation_framework/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/automation_framework/tests/test_openweather_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/automation_framework/utilities/api_helpers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/automation_framework/utilities/db_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/automation_framework/utilities/db_helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;lior277&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Doringber/pango-automation-interview-questions.git&quot;,
+    &quot;accountId&quot;: &quot;5f82f56d-fd63-447a-9d57-3bf1cbf5f993&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2wX3RcNqOl1znpwyDbfS3XiQmlq" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.pytest in test_openweather_api.py.executor": "Debug",
+    "Python tests.pytest in test_temperatura_data_consistency.py.executor": "Run",
+    "Python.api_helpers.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/User/PycharmProjects/pango-automation-interview-questions/tests",
+    "settings.editor.selected.configurable": "Errors"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\pango-automation-interview-questions\tests" />
+      <recent name="C:\Users\User\PycharmProjects\pango-automation-interview-questions\automation_framework\utilities" />
+      <recent name="C:\Users\User\PycharmProjects\pango-automation-interview-questions\automation_framework" />
+      <recent name="C:\Users\User\PycharmProjects\pango-automation-interview-questions\objects" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\pango-automation-interview-questions\automation_framework\config" />
+      <recent name="C:\Users\User\PycharmProjects\pango-automation-interview-questions\tests\test_data" />
+      <recent name="C:\Users\User\PycharmProjects\pango-automation-interview-questions\objects" />
+      <recent name="C:\Users\User\PycharmProjects\pango-automation-interview-questions" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.pytest in test_temperatura_data_consistency.py">
+    <configuration name="api_access" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pango-automation-interview-questions" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/automation_framework/utilities" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\User\PycharmProjects\pango-automation-interview-questions\automation_framework\utilities\api_access.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_openweather_api.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="pango-automation-interview-questions" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_openweather_api.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_temperatura_data_consistency.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="pango-automation-interview-questions" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_temperatura_data_consistency.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest in test_temperatura_data_consistency.py" />
+        <item itemvalue="Python tests.pytest in test_openweather_api.py" />
+        <item itemvalue="Python.api_access" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-348a24fa61fa-5312c7369657-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.23774.444" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aee3fee6-5b65-46d4-afcd-283613b90b77" name="Changes" comment="" />
+      <created>1746174083918</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746174083918</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/automation_framework/utilities/api_access.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

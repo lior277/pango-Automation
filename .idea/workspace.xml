@@ -4,40 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aee3fee6-5b65-46d4-afcd-283613b90b77" name="Changes" comment="fix">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pango-automation-interview-questions.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automation_framework/WeatherDiscrepancyAnalyzer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automation_framework/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automation_framework/config/manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automation_framework/utilities/api_access.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automation_framework/utilities/data_loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automation_framework/utilities/web_driver_extension/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automation_framework/utilities/web_driver_extension/web_driver_extension.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/data_classes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/data_classes/get_weather_response.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/objects_api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/objects_api/weather_page_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/objects_ui/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/objects_ui/weather_page_ui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_data/popular_cities.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_openweather_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_suit_Base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_temperatura_data_consistency.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automation_framework/config/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/automation_framework/config/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automation_framework/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/automation_framework/tests/test_openweather_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/automation_framework/utilities/api_helpers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/automation_framework/utilities/db_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/automation_framework/utilities/db_helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="aee3fee6-5b65-46d4-afcd-283613b90b77" name="Changes" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,6 +150,15 @@
       <option name="presentableId" value="Default" />
       <updated>1746174083918</updated>
     </task>
+    <task id="LOCAL-00001" summary="fix">
+      <option name="closed" value="true" />
+      <created>1746281614889</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1746281614889</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

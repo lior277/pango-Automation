@@ -1,15 +1,17 @@
 import pytest
 
+from tests.conftest import init_weather_test_data, store_weather_responses
 from tests.test_data.popular_cities import city_data
 from tests.test_suit_Base import TestSuitBase
 
 
-class TestWeatherApiWithCityIds(TestSuitBase):
+class TestTemperaturaDataConsistency(TestSuitBase):
     @pytest.mark.asyncio
     @pytest.mark.parametrize("city_info", city_data)
     async def test_get_weather_by_city_id(self, city_info,
                                           db_helper, ui_client,
-                                          weather_discrepancy_analyzer, config_manager, driver):
+                                          weather_discrepancy_analyzer, config_manager, driver,
+                                          hf_logger, request, analyze_discrepancies):
 
         driver.get(config_manager.get_ui_weather_url())
         city_name = city_info["city"]
@@ -17,18 +19,20 @@ class TestWeatherApiWithCityIds(TestSuitBase):
 
         print(f"\nTesting weather data for {city_name} (ID: {city_id})")
 
-        try:
-            # Call the API to get weather data by city ID
-            weather_response_ui = await ui_client.get_temperatura_data_by_city_name(city_name)
-            weather_response_db = db_helper.get_weather_data_by_city_name(city_name)
+        # Initialize test data
+        init_weather_test_data(request, city_name, city_id)
 
-            report = await weather_discrepancy_analyzer.analyze_temperature_discrepancies(
-                db_response=weather_response_db,
-                ui_response=weather_response_ui
-            )
+        # Get weather data from UI and DB
+        weather_response_ui = await ui_client.get_temperatura_data_by_city_name(city_name)
+        weather_response_db = db_helper.get_weather_data_by_city_name(city_name)
 
-            print("\n---- Temperature Discrepancy Report ----")
-            print(report)
+        # Store response data
+        store_weather_responses(request, weather_response_ui, weather_response_db)
 
-        except Exception as e:
-            pytest.fail(f"Test failed for {city_name}: {str(e)}")
+        # Analyze discrepancies (this also stores analysis data for HF logging)
+        await analyze_discrepancies(
+            weather_discrepancy_analyzer,
+            weather_response_db,
+            weather_response_ui,
+            request
+        )

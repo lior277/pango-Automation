@@ -37,3 +37,9 @@ jobs:
         with:
           name: pytest-report
           path: report.html
+
+      - name: Run tests in order
+        run: |
+          pytest tests/test_weather_api_with_city_ids.py
+          pytest tests/test_temperatura_data_consistency.py --html=report.html --self-contained-html
+

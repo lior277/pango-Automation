@@ -4,7 +4,6 @@ import os
 
 class ConfigManager:
     def __init__(self, config_path='config.ini'):
-        # Direct path to config.ini in automation_framework/config
         framework_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         actual_config_path = os.path.join(framework_dir, 'config', config_path)
 
@@ -14,7 +13,6 @@ class ConfigManager:
         self.config = configparser.ConfigParser()
         self.config.read(actual_config_path)
 
-        # Set default reporting preferences if not in config
         if not self.config.has_section('REPORTING'):
             self.config.add_section('REPORTING')
             self.config.set('REPORTING', 'TYPE', 'html')
@@ -28,7 +26,17 @@ class ConfigManager:
         return self.config.get('API', 'API_KEY')
 
     def get_db_name(self) -> str:
-        return self.config.get('DB', 'DB_NAME')
+        db_name = self.config.get('DB', 'DB_NAME', fallback=None)
+        if db_name and os.path.exists(db_name):
+            return db_name
+
+        # Default to pre-populated DB under tests/assets
+        framework_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        fallback_path = os.path.join(framework_dir, '..', 'tests', 'assets', 'weather_data.db')
+        if os.path.exists(fallback_path):
+            return os.path.abspath(fallback_path)
+
+        raise FileNotFoundError("Database file not found. Ensure it's in config or at tests/assets/weather_data.db")
 
     def get_ui_weather_url(self) -> str:
         return self.config.get('UI', 'WEATHER_URL')
@@ -51,8 +59,7 @@ class ConfigManager:
         return report_type in ['html', 'both']
 
     def get_hugging_face_project(self) -> str:
-        return self.config.get('REPORTING', 'HUGGING_FACE_PROJECT',
-                               fallback='pango-weather-automation')
+        return self.config.get('REPORTING', 'HUGGING_FACE_PROJECT', fallback='pango-weather-automation')
 
     def generate_text_reports(self) -> bool:
         return self.config.getboolean('REPORTING', 'GENERATE_TEXT_REPORTS', fallback=False)

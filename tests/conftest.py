@@ -1,6 +1,10 @@
 import pytest
 import datetime
 import os
+import sys
+
+# Add project root to sys.path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from automation_framework.WeatherDiscrepancyAnalyzer import WeatherDiscrepancyAnalyzer
 from automation_framework.config.manager import ConfigManager

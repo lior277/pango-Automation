@@ -1,3 +1,4 @@
+import sqlite3
 from huggingface_hub import HfApi
 import wandb
 import logging
@@ -15,28 +16,33 @@ class HuggingFaceLogger:
         if not self.hf_token:
             raise ValueError("HUGGING_FACE_TOKEN environment variable not set")
 
+        # === DB Setup ===
+        self.db_path = os.environ.get("WEATHER_DB_PATH", "weather.db")
+        os.makedirs(os.path.dirname(self.db_path) or ".", exist_ok=True)
+        self.conn = sqlite3.connect(self.db_path)
+        print(f"[HFLogger] Using DB: {self.db_path} | Exists: {os.path.exists(self.db_path)}")
+
+        # Hugging Face API setup
         self.api = HfApi(token=self.hf_token)
 
-        # Set up repository ID
         if repository_id is None:
-            # Get username from Hugging Face
             self.user_info = self.api.whoami()
             self.username = self.user_info["name"]
             self.repository_id = f"{self.username}/{project_name}"
         else:
             self.repository_id = repository_id
 
-        # Create repository if it doesn't exist
+        # Create repo if not exists
         try:
             self.api.repo_info(repo_id=self.repository_id)
         except Exception:
             self.api.create_repo(repo_id=self.repository_id, private=True)
 
-        # Set up logging
+        # Logging setup
         self.logger = logging.getLogger(project_name)
         self.logger.setLevel(logging.INFO)
 
-        # Set up W&B for visualization (optional)
+        # Optional W&B setup
         self.use_wandb = False
 
     def setup_wandb(self, wandb_api_key, wandb_project=None):
@@ -45,7 +51,6 @@ class HuggingFaceLogger:
         self.use_wandb = True
 
     def log_metrics(self, metrics, step=None):
-        # Create log entry
         timestamp = datetime.datetime.now().isoformat()
         log_entry = {
             "timestamp": timestamp,
@@ -53,13 +58,11 @@ class HuggingFaceLogger:
             "metrics": metrics
         }
 
-        # Save as JSON file
-        log_filename = f"logs/{timestamp.replace(':', '-')}.json"
         os.makedirs("logs", exist_ok=True)
+        log_filename = f"logs/{timestamp.replace(':', '-')}.json"
         with open(log_filename, "w") as f:
             json.dump(log_entry, f, indent=2)
 
-        # Upload to Hugging Face
         self.api.upload_file(
             path_or_fileobj=log_filename,
             path_in_repo=f"logs/{os.path.basename(log_filename)}",
@@ -67,11 +70,9 @@ class HuggingFaceLogger:
             commit_message=f"Log metrics at step {step}"
         )
 
-        # Log to W&B if enabled
         if self.use_wandb:
             wandb.log(metrics, step=step)
 
-        # Log to Python logger
         self.logger.info(f"Metrics at step {step}: {metrics}")
 
     def log_model(self, model_path, commit_message=None):

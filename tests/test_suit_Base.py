@@ -52,6 +52,7 @@ class TestSuitBase:
         options = ChromeOptions()
 
         options.add_argument('--headless')  # Required in CI
+        options.page_load_strategy = "none"
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--disable-gpu')

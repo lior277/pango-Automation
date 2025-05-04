@@ -33,8 +33,7 @@ jobs:
         python -m pytest -n auto --dist=loadfile --html=report-${{ matrix.instance }}.html --self-contained-html
 
     - name: Upload pytest report
-      uses: actions/upload-artifact@v2
-      if: always()
+      uses: ./.github/actions/upload-artifact
       with:
         name: pytest-report-${{ matrix.instance }}
         path: report-${{ matrix.instance }}.html

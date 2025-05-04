@@ -9,31 +9,28 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        instance: [1, 2, 3, 4]
-      fail-fast: false
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        pip install pytest pytest-xdist pytest-html
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest pytest-html
 
-    - name: Run tests in parallel
-      run: |
-        python -m pytest -n auto --dist=loadfile --html=report-${{ matrix.instance }}.html --self-contained-html
+      - name: Run tests
+        run: |
+          pytest --html=report.html --self-contained-html
 
-    - name: Upload pytest report
-      uses: ./.github/actions/upload-artifact
-      with:
-        name: pytest-report-${{ matrix.instance }}
-        path: report-${{ matrix.instance }}.html
+      - name: Upload pytest report
+        uses: ./.github/actions/upload-artifact
+        if: always()
+        with:
+          name: pytest-report
+          path: report.html

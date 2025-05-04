@@ -1,3 +1,4 @@
+import os
 import sqlite3
 from typing import List, Optional
 
@@ -8,7 +9,7 @@ from objects.data_classes.get_weather_response import WeatherResponse
 class DatabaseHelper:
     def __init__(self, config_manager: ConfigManager = None):
         self.config_manager = config_manager or ConfigManager()
-        db_name = self.config_manager.get_db_name()
+        db_name = os.path.abspath(self.config_manager.get_db_name())
 
         self.conn = sqlite3.connect(db_name)
         self.cursor = self.conn.cursor()

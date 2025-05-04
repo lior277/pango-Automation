@@ -17,6 +17,13 @@ from tests.fixtures.weather_fixtures import WeatherTestFixtures
 from tests.test_suit_Base import TestSuitBase
 
 
+shared_db_path = os.path.abspath("tests/assets/weather_data.db")
+os.environ["WEATHER_DB_PATH"] = shared_db_path
+print(f"[pytest setup] Using shared WEATHER_DB_PATH = {shared_db_path}")
+
+# Add project root to sys.path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 # ✅ Register custom CLI option
 def pytest_addoption(parser):
     parser.addoption(

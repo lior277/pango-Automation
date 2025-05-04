@@ -9,11 +9,25 @@ from objects.data_classes.get_weather_response import WeatherResponse
 class DatabaseHelper:
     def __init__(self, config_manager: ConfigManager = None):
         self.config_manager = config_manager or ConfigManager()
-        db_name = os.path.abspath(self.config_manager.get_db_name())
 
-        self.conn = sqlite3.connect(db_name)
+        # Get shared DB path from env or config
+        db_name = DatabaseHelper.get_shared_db_path(self.config_manager)
+        self.db_path = os.path.abspath(db_name)
+
+        # Ensure directory exists (handles relative or subdir paths)
+        os.makedirs(os.path.dirname(self.db_path) or ".", exist_ok=True)
+
+        print(f"[DatabaseHelper] Using DB: {self.db_path} | Exists: {os.path.exists(self.db_path)}")
+
+        self.conn = sqlite3.connect(self.db_path)
         self.cursor = self.conn.cursor()
         self.create_tables()
+
+    @staticmethod
+    def get_shared_db_path(config_manager: Optional[ConfigManager] = None) -> str:
+        """Return the consistent DB path used across all test layers"""
+        config_manager = config_manager or ConfigManager()
+        return os.environ.get("WEATHER_DB_PATH", config_manager.get_db_name())
 
     def create_tables(self):
         """Create the weather_data table if it doesn't exist"""

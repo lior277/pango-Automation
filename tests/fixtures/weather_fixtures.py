@@ -1,6 +1,9 @@
 import datetime
 from typing import Dict, Any
 
+from automation_framework.utilities.db_helpers import DatabaseHelper
+from objects.data_classes.get_weather_response import WeatherResponse
+
 
 class WeatherTestFixtures:
     @staticmethod
@@ -10,6 +13,18 @@ class WeatherTestFixtures:
             "city_id": city_id,
             "test_start_time": datetime.datetime.now().isoformat()
         }
+
+        # ✅ Also insert test data into the DB so it's available
+        db = DatabaseHelper()
+        sample_data = WeatherResponse(
+            city_name=city_name,
+            temperature=52,
+            feels_like=51,
+            temp_min=50,
+            temp_max=54,
+            average_temperature=(50 + 54) / 2
+        )
+        db.insert_weather_data([sample_data])
 
     @staticmethod
     def store_weather_responses(request, ui_response, db_response):

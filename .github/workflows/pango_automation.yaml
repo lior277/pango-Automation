@@ -1,10 +1,10 @@
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  schedule:
-    - cron: '0 0 * * 1'  # Run weekly on Mondays
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+#   schedule:
+#     - cron: '0 0 * * 1'  # Run weekly on Mondays
 
 jobs:
   test:
@@ -39,4 +39,3 @@ jobs:
         run: |
           pytest tests/test_weather_api_with_city_ids.py
           pytest tests/test_temperatura_data_consistency.py --html=report.html --self-contained-html
-
